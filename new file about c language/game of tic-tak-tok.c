@@ -28,4 +28,43 @@ int check_winner() {
     return 0;
 }
 
+void make_move() {
+    int choice;
+    printf("Player %c, enter your move (1-9): ", player);
+    scanf("%d", &choice);
+    if (choice >= 1 && choice <= 9) {
+        int row = (choice - 1) / 3;
+        int col = (choice - 1) % 3;
+        if (board[row][col] != 'X' && board[row][col] != 'O') {
+            board[row][col] = player;
+            player = (player == 'X') ? 'O' : 'X';
+        } else {
+            printf("Position already taken! Try again.\n");
+            make_move();
+        }
+    } else {
+        printf("Invalid move! Try again.\n");
+        make_move();
+    }
+}
+
+int main() {
+    int moves = 0;
+    while (1) {
+        print_board();
+        make_move();
+        moves++;
+        if (check_winner()) {
+            print_board();
+            printf("Player %c wins!\n", (player == 'X') ? 'O' : 'X');
+            break;
+        }
+        if (moves == 9) {
+            print_board();
+            printf("It's a draw!\n");
+            break;
+        }
+    }
+    return 0;
+}
 
