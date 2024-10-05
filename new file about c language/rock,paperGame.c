@@ -42,4 +42,36 @@ void determineWinner(int playerChoice, int computerChoice) {
     }
 }
 
+int main() {
+    int playerChoice, computerChoice;
+    char playAgain;
 
+    srand(time(0));  // Initialize random seed
+
+    printf("Welcome to Rock, Paper, Scissors!\n");
+    gameRules();
+
+    do {
+        printf("\nMake your choice:\n");
+        printf("1. Rock\n");
+        printf("2. Paper\n");
+        printf("3. Scissors\n");
+        printf("Enter your choice (1/2/3): ");
+        scanf("%d", &playerChoice);
+
+        if (playerChoice < 1 || playerChoice > 3) {
+            printf("Invalid choice! Please choose between 1, 2, or 3.\n");
+            continue;
+        }
+
+        computerChoice = getComputerChoice();
+        determineWinner(playerChoice, computerChoice);
+
+        printf("\nDo you want to play again? (y/n): ");
+        scanf(" %c", &playAgain);
+
+    } while (playAgain == 'y' || playAgain == 'Y');
+
+    printf("Thanks for playing!\n");
+    return 0;
+}
