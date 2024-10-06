@@ -46,3 +46,37 @@ Player X starts first, followed by Player O.
 How to Play
 Each player takes turns entering a number (1-9) to mark their position on the 3x3 grid.
 The game will announce the winner or a draw once all moves are made.
+
+
+
+Welcome to Rock, Paper, Scissors!
+
+Rules of the game:
+Rock crushes Scissors
+Scissors cuts Paper
+Paper covers Rock
+
+Make your choice:
+1. Rock
+2. Paper
+3. Scissors
+Enter your choice (1/2/3): 1
+
+You chose: Rock
+Computer chose: Scissors
+You win!
+
+Do you want to play again? (y/n): y
+
+Make your choice:
+1. Rock
+2. Paper
+3. Scissors
+Enter your choice (1/2/3): 2
+
+You chose: Paper
+Computer chose: Rock
+You win!
+
+Do you want to play again? (y/n): n
+Thanks for playing!
